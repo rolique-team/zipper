@@ -26,6 +26,8 @@ services:
     build:
       dockerfile: ./docker/gobuild/Dockerfile
       context: .
+    env_file:
+    - ./docker.env
     ports:
       - "9992:8088"
 
@@ -33,5 +35,7 @@ services:
     build:
       dockerfile: ./docker/golang/Dockerfile
       context: .
+    env_file:
+    - ./docker.env
     ports:
       - "9993:8088"
